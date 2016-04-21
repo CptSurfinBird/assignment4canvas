@@ -52,7 +52,7 @@
         advertBanner.y = 60 * 0.5; /*location*/
         stage.addChild(advertBanner);
 
-        advertText = new createjs.Text("CLICK HERE!", "40px Roboto", "#fffff");
+        advertText = new createjs.Text("CLICK HERE!", "40px Roboto", "#iii");
         advertText.regX = 20 * 0.5;
         advertText.regY = 20 * 0.5;
        	advertText.x = 468 * 0.7;
