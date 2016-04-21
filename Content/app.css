@@ -3,5 +3,6 @@
 #canvas {
     border: 1px dashed black;
     width: 468;
+    background-image: url(../Assets/images/advertBanner.jpg);
     height: 60;
 }
