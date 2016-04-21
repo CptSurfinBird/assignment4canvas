@@ -1,0 +1,7 @@
+/* custom syle sheet */
+
+#canvas {
+    border: 1px dashed black;
+    width: 468;
+    height: 60;
+}
