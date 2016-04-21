@@ -1,82 +1,31 @@
-/// <reference path="../typings/tsd.d.ts" />
-
-// setup your IIFE (Immediately Invoked Function Expression)
 (function () {
-
 	"use strict";
 
-	var screenWidth = 468;
-	var screenHeight = 60;
-
-	var canvas = document.getElementById("canvas");
-	canvas.setAttribute("width", screenWidth.toString());
-	canvas.setAttribute("height", screenHeight.toString());
-
-	var stage = new createjs.Stage(canvas);
-
-	var advertText = {};
-	var advertTextGrow = 3;
-
-	var advertBanner = {};
-	var urlLink = "http://gc200222770.computerstudi.es/portfolio/index.html"
-	var urlText
+	var stage;
+	var canvas;
 
 	function init() {
-		console.log("Initialization");
-
-		stage.enableMouseOver(20);
-
+		// reference to canvas element
+		canvas = document.getElementById("canvas");
+		// create a stage container object
+		stage = new createjs.Stage(canvas);
+		// set frame rate
 		createjs.Ticker.setFPS(60);
-
-		createjs.Ticker.addEventListener("tick", animationLoop);
-
-		main();
+		// listen for frame changes and call the animation function
+		createjs.Ticker.addEventListener("tick", aniamtionLoop);
 	}
 
+	// runs every frame
 	function animationLoop() {
-			advertText.x += 1;
-			if(advertText.x >=  )
-        };
-
+		// refresh the stage object
 		stage.update();
-
 	}
 
 	function main() {
-		advertBanner = new createjs.Bitmap('../Assets/images/advertBanner.jpg');
-        advertBanner.regX = 468;
-		advertBanner.regY = 60;
-        advertBanner.scaleX = 1; /*Size */
-        advertBanner.scaleY = 1;
-        advertBanner.x = 468 * 0.5;
-        advertBanner.y = 60 * 0.5; /*location*/
-        stage.addChild(advertBanner);
+		var advertText = new createjs.Text("Click Here!", "40px Roboto", "#fffff");
+		stage.addChild(advertText);
+	}
 
-        advertText = new createjs.Text("CLICK HERE!", "40px Roboto", "#111");
-        advertText.regX = advertText.getMeasuredWidth() * 0.5;
-        advertText.regY = advertText.getMeasuredHeight() * 0.5;
-       	advertText.x = screenWidth * 0.7;
-        advertText.y = screenHeight * 0.5;/*location*/
-        stage.addChild(advertText);
-
-        advertBanner.on("click", function () {
-            advertText.text = "Thanks";
-            advertText.regX = advertText.getMeasuredWidth() * 0.5;
-            advertText.regY = advertText.getMeasuredHeight() * 0.5;
-            window.open(urlLink);
-        });
-
-        advertBanner.on('mouseover', function () {
-            advertBanner.alpha = 0.5;
-        })
-
-        advertBanner.on('mouseout', function () {
-            advertBanner.alpha = 1;
-        })
-    }
-
-
-	window.onload = init;
-
+	window.load = init;
 
 })();
