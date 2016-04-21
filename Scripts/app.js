@@ -52,11 +52,11 @@
         advertBanner.y = 60 * 0.5; /*location*/
         stage.addChild(advertBanner);
 
-        advertText = new createjs.Text("CLICK HERE!", "40px Roboto", "#111");
-        advertText.regX = advertText.getMeasuredWidth() * 0.5;
-        advertText.regY = advertText.getMeasuredHeight() * 0.5;
-       	advertText.x = screenWidth * 0.7;
-        advertText.y = screenHeight * 0.5;/*location*/
+        advertText = new createjs.Text("CLICK HERE!", "40px Roboto", "#fffff");
+        advertText.regX = 20 * 0.5;
+        advertText.regY = 20 * 0.5;
+       	advertText.x = 468 * 0.7;
+        advertText.y = 60 * 0.5;/*location*/
         stage.addChild(advertText);
 
         advertBanner.on("click", function () {
