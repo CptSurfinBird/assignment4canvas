@@ -34,9 +34,7 @@
 	}
 
 	function animationLoop() {
-			advertText.x += 1;
-			if(advertText.x >=  )
-        };
+			advertText.rotate += 3
 
 		stage.update();
 
